@@ -1,0 +1,13 @@
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env python3
+    import json
+    import sys
+
+    config = json.load(sys.stdin)
+    dirs = config.setdefault("dirs", {})
+    dirs["centralized-config-builder-smoke"] = {
+        "tags": ["centralized-config-builder-smoke"]
+    }
+    print(json.dumps(config))
