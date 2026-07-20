@@ -7,7 +7,6 @@ config_builder:
 
     config = json.load(sys.stdin)
     tags = config.setdefault("tags", {})
-    tags["centralized_builder_smoke"] = {
-        "main": "^main$"
-    }
+    dest_branch = tags.setdefault("dest_branch", {})
+    dest_branch["centralized_builder_smoke"] = "^main$"
     print(json.dumps(config))
