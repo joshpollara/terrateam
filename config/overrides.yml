@@ -6,8 +6,8 @@ config_builder:
     import sys
 
     config = json.load(sys.stdin)
-    dirs = config.setdefault("dirs", {})
-    dirs["centralized-config-builder-smoke"] = {
-        "tags": ["centralized-config-builder-smoke"]
+    tags = config.setdefault("tags", {})
+    tags["centralized_builder_smoke"] = {
+        "main": "^main$"
     }
     print(json.dumps(config))
