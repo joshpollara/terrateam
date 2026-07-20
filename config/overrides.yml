@@ -6,7 +6,5 @@ config_builder:
     import sys
 
     config = json.load(sys.stdin)
-    tags = config.setdefault("tags", {})
-    dest_branch = tags.setdefault("dest_branch", {})
-    dest_branch["centralized_builder_smoke"] = "^main$"
+    config["parallel_runs"] = 7
     print(json.dumps(config))
