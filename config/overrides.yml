@@ -1,0 +1,10 @@
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env python3
+    import json
+    import sys
+
+    config = json.load(sys.stdin)
+    config["parallel_runs"] = 7
+    print(json.dumps(config))
