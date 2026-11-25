@@ -1,5 +1,5 @@
 config_builder:
-  enabled: true
+  enabled: false
   script: |
     #! /usr/bin/env python3
     import json
